@@ -1,35 +1,264 @@
+:root {
+    --neon-cyan: #00f3ff;
+    --neon-magenta: #ff007f;
+    --dark-bg: #050505;
+    --glass-bg: rgba(10, 10, 10, 0.7);
+    --glass-border: rgba(0, 243, 255, 0.2);
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
+    font-family: 'Rajdhani', sans-serif;
+    background-color: var(--dark-bg);
+    color: #e0e0e0;
+    overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Glassmorphism Navbar */
 .navbar {
-    background-color: #343a40;
-    position: absolute;
-    transition: background-color 0.5s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.4s ease;
 }
 
-.navbar.scrolled {
-    background-color: #343a40;
+.navbar .nav-link {
+    color: #fff !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.9rem;
+    position: relative;
+    transition: color 0.3s;
 }
 
-.text-muted {
-    font-size: large;
+.navbar .nav-link:hover {
+    color: var(--neon-cyan) !important;
+    text-shadow: 0 0 10px var(--neon-cyan);
 }
 
-.card-title {
-    text-decoration: underline;
+/* Neon Text & Buttons */
+.neon-text {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
 }
 
+.btn-primary {
+    background-color: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--neon-cyan);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+    border-color: var(--neon-cyan);
+}
+
+.btn-cyan { border-color: var(--neon-cyan); color: var(--neon-cyan); }
+.btn-cyan:hover { background: var(--neon-cyan); color: #000; box-shadow: 0 0 20px var(--neon-cyan); }
+
+.btn-magenta { border-color: var(--neon-magenta); color: var(--neon-magenta); }
+.btn-magenta:hover { background: var(--neon-magenta); color: #fff; box-shadow: 0 0 20px var(--neon-magenta); }
+
+/* Masthead */
 .masthead {
     height: 100vh;
     min-height: 500px;
-    background-image: url('img/Default_background_image_for_my_personal_data_website_techica_2.jpg');
+    background: linear-gradient(rgba(5, 5, 5, 0.7), rgba(5, 5, 5, 0.9)), url('img/Default_background_image_for_my_personal_data_website_techica_2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: rgb(255, 255, 255);
-    text-align: center;
+    background-attachment: fixed;
+    color: white;
+    position: relative;
+}
+
+/* Divider */
+hr.divider {
+    max-width: 50px;
+    border-width: 3px;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Section Backgrounds */
+.page-section {
+    padding: 8rem 0;
+}
+.bg-light { background-color: #0b0c10 !important; }
+
+/* About Section */
+.about-image img {
+    border: 3px solid var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.6);
+    filter: drop-shadow(0px 0px 10px rgba(0, 243, 255, 0.5));
+    transition: transform 0.5s;
+}
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+.skills .list-inline-item {
+    font-size: 1.2rem;
+    margin: 10px;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: var(--glass-bg);
+    transition: 0.3s;
+}
+.skills .list-inline-item:hover {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan);
+    transform: translateY(-5px);
+}
+
+/* Project Cards Glassmorphism */
+.futuristic-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.futuristic-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.3);
+}
+
+.futuristic-card .card-body {
+    background: transparent;
+    color: #ccc;
+}
+.futuristic-card .card-title {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* Progress Bars */
+.progress-container { margin-bottom: 1.2rem; }
+.progress-label {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    font-family: 'Rajdhani', sans-serif;
+    color: #aaa;
+    margin-bottom: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.progress {
+    height: 6px;
+    background: #111;
+    border-radius: 3px;
+    overflow: visible;
+}
+.progress-bar {
+    background: linear-gradient(90deg, #0051ff, var(--neon-cyan));
+    box-shadow: 0 0 10px var(--neon-cyan);
+    border-radius: 3px;
+    position: relative;
+}
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -2px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 0 0 20px var(--neon-cyan);
+}
+
+/* Forms */
+.form-control {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    border-radius: 5px;
+}
+.form-control:focus {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 10px rgba(0,243,255,0.3);
+}
+
+/* Footer Section */
+footer {
+    background: #000 !important;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: var(--neon-cyan) !important;
+    text-shadow: 0 0 15px var(--neon-cyan);
+    transform: scale(1.2);
+}
+
+/* Testimonials */
+.testimonial-card {
+    background: rgba(255,255,255,0.02);
+    border-left: 4px solid var(--neon-magenta);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: all 0.3s border-color;
+}
+.testimonial-card:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: var(--neon-cyan);
+}
+.testimonial-card p {
+    font-style: italic;
+    color: #bbb;
+}
+.testimonial-card footer {
+    color: #888;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--neon-cyan);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s;
+    box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* Particle Canvas */
+#particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
 }
